@@ -1,1 +1,1 @@
-# karmoni-kavya-assignment
+# karmoi-kavya-assignment
