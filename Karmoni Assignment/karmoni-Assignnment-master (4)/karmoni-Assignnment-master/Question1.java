@@ -2,46 +2,55 @@
 
 // let us assume a string “ALPHABETS” find the count of each character and find the length of “B” and replace as “Z” and print it.
 
-class Question1 {
+import java.util.*;
+public class Main
+{
+    static final int MAX_CHAR = 256;
  
-    // Function to move string character
-        static void encode(String s, int k) {
-     
-            // changed string
-            String newS = "";
-     
-            // iterate for every characters
-            for (int i = 0; i < s.length(); ++i) {
-                // ASCII value
-                int val = s.charAt(i);
-                // store the duplicate
-                int dup = k;
-     
-                // if k-th ahead character exceed 'z'
-                if (val + k > 122) {
-                    k -= (122 - val);
-                    k = k % 26;
-                     
-                    newS += (char)(96 + k);
-                } else {
-                    newS += (char)(val + k);
-                }
-     
-                k = dup;
+    static void getOccuringChar(String str)
+    {
+        int count[] = new int[MAX_CHAR];
+ 
+        int len = str.length();
+ 
+        for (int i = 0; i < len; i++)
+            count[str.charAt(i)]++;
+ 
+        char ch[] = new char[str.length()];
+        for (int i = 0; i < len; i++) {
+            ch[i] = str.charAt(i);
+            int find = 0;
+            for (int j = 0; j <= i; j++) {
+ 
+                if (str.charAt(i) == ch[j])
+                    find++;
             }
-     
-            // print the new string
-            System.out.println(newS);
-        }
-     
-    // Driver Code
-        public static void main(String[] args) {
-            String str = "abc";
-            int k = 28;
-     
-            // function call
-            encode(str, k);
+ 
+            if (find == 1)
+                System.out.println("Number of Occurrence of "+ str.charAt(i)+ " is:" + count[str.charAt(i)]);
         }
     }
-     
-    // This code is contributed by vikash kumar 6205077362
+   
+	
+	
+	
+	
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    String str = sc.next();
+	    int len = 0;
+        char c = 'Z';
+        int n = str.length();
+        
+        for(int i=0;i<n;i++){
+            if(str.charAt(i)=='B'){
+           str = str.substring(0, i) + c + str.substring(i + 1);
+           len++;
+            }
+        }
+ 
+        System.out.println(str);
+        System.out.println("length of B is " +len);
+        getOccuringChar(str);
+    }
+}
