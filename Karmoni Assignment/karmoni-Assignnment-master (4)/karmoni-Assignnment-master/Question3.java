@@ -2,7 +2,7 @@
 // question numbber 3....create a text file, which has Alphabets A-z in that file on each line.so read the file and get all lines 
 //nd push into Dictionary ,in which key as line number and value as corresponding alphabet. 
 //push the value alone from dictionary to string array.
-class Question3
+class Main
 {
     static void splitString(String str)
     {
