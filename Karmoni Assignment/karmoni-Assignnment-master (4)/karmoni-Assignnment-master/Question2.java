@@ -1,6 +1,6 @@
 //let us assume two string array as a={apple,fruit,text,world} and b={text,sam,try,apple,blue}
  //compare the both array and give the count of word same in both array.
- public class Question2
+ public class Main
 {
     public static  int countMatch(String[] a, String[] b) {
 
